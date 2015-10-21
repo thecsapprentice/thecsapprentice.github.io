@@ -1,0 +1,158 @@
+@import url(http://fonts.googleapis.com/css?family=Cabin);
+
+body {
+    margin: 0 0 0 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#centered-content-block {
+    min-width: 300px;
+    max-width: 900px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+@media screen and (min-width: 500px) {
+    h1 {
+        font-family: 'Cabin', sans-serif;   
+        text-align: left;
+    }
+    
+    .titleline {
+        font-family: 'Cabin', sans-serif;
+        font-weight: bold;
+        font-size: x-large;
+    }
+    .author .name {
+        display: block;
+        font-family: 'Cabin', sans-serif;
+        font-size: large;
+    }
+    
+    .author .location {
+        display: block;
+        font-family: 'Cabin', sans-serif;
+        font-size: small;
+    }
+    #abstract .body{
+        font-family: 'Cabin', sans-serif;
+        text-align: justify;
+        margin-top: 5px;
+    }
+}
+@media screen and (max-width: 500px) {
+    h1 {
+        font-family: 'Cabin', sans-serif;   
+        font-size: large;
+        text-align: center;                
+    }
+    
+    .titleline {
+        font-family: 'Cabin', sans-serif;
+        font-weight: bold;
+        font-size: medium;
+    }
+    .author .name {
+        display: block;
+        font-family: 'Cabin', sans-serif;
+        font-size: small;
+    }
+    
+    .author .location {
+        display: block;
+        font-family: 'Cabin', sans-serif;
+        font-size: x-small;
+    }
+    #abstract .body{
+        font-family: 'Cabin', sans-serif;
+        text-align: justify;
+        margin-top: 2px;
+        font-size: small;
+    }
+}
+
+#authors {
+    margin-bottom: 10px;
+}
+
+.author-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.author-block .author {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+
+#videos{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#videos video{
+    width: 80%    !important;
+    height: 80%   !important;
+}
+
+
+.code-block{
+    font-family: 'Cabin', sans-serif;     
+    display: flex;
+}
+
+.code-downloads{
+    min-width: 90px;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;  
+}    
+
+.code-downloads a{    
+    display: block;
+}
+
+.citation-block{
+    font-family: 'Cabin', sans-serif;     
+    display: flex;
+}
+
+.citation-downloads{
+    min-width: 90px;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;  
+}    
+
+.citation-downloads a{    
+    display: block;
+}
+
+.citation {
+}
+
+.citation .paper-authors{
+    font-style: italic;
+}
+
+.citation .paper-authors:after{
+    content: ",";
+}
+
+.citation .paper-title{
+    font-weight: bold;
+}
+
+.citation .paper-title:before{
+    content: '"';
+}
+
+.citation .paper-title:after{
+    content: '"';
+}
+
+.citation .paper-venue{
+    font-style: italic;
+}

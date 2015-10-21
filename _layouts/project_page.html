@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ page.paper_title }}</title>
+        <meta charset="utf-8" />
+        <link href="/css/project_page.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="centered-content-block">
+            <h1>{{ page.paper_title }}</h1>
+
+            <div id="authors"> 
+                <span class="titleline">Authors</span>
+                <div class="author-block">
+                    {% for author in page.paper_authors %}
+                    <div class="author"> 
+                        <span class="name">{{ author.name }}</span>
+                        <span class="location">{{ author.location }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div id="videos" >
+                {% for video in page.videos %}
+                <video controls poster="{{ video.poster_url }}">
+                    <source src="{{ video.src_url }}" type="video/mp4">
+                    I'm sorry; your browser doesn't support HTML5 video in MP4 with H.264. 
+                    <a href="{{ video.src_url }}">Try downloading the video instead.</a>
+                </video>
+                {% endfor %}
+            </div>
+
+            <div id="abstract">
+                <span class="titleline">Abstract</span>
+                <p class="body">
+                    {{ page.abstract }}
+                </p>
+            </div>
+
+            {% if page.code %}
+            <div id="code" >
+                <span class="titleline">Code</span>
+                {% for code in page.code %}
+                <div class="code-block">
+                    <div class="code-downloads" >
+                        <a href="{{ code.url }}">[Download]</a>
+                    </div>
+                    <div class="code-description" >
+                        {{ code.description }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div id="paper" >
+                <span class="titleline">Cite</span>
+                <div class="citation-block">
+                    <div class="citation-downloads">
+                        <a href="{{ page.paper_url }}" class="paper-link">[Download]</a>
+                        <a href="{{ page.bibtex_url }}" class="paper-bibtex">[Bibtex]</a>
+                    </div>
+                    <div class="citation">
+                        <span class="paper-authors">{% for author in page.paper_authors %}{{ author.cite_name }}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}</span>
+                        <span class="paper-title">
+                            {{ page.paper_title }}
+                        </span>
+                        <span class="paper-venue">
+                            {{ page.paper_venue }}, {{ page.paper_year }}
+                        </span>  
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

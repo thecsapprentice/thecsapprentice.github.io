@@ -1,0 +1,58 @@
+---
+layout: project_page
+paper_title: "GRIDiron: An Interactive Authoring and Cognitive Training Foundation for Reconstructive Plastic Surgery Procedures"
+paper_url: http://pages.cs.wisc.edu/~nmitchel/project_pages/gridiron/gridiron-2015.pdf
+bibtex_url: gridiron-2015.bib
+paper_venue: in proceedings of ACM SIGGRAPH
+paper_year: 2015
+paper_authors:
+  - name: Nathan Mitchell
+    location: University of Wisconsin - Madison
+    cite_name: N. Mitchell
+  - name: Court Cutting
+    location: New York University
+    cite_name: C. Cutting
+  - name: Eftychios Sifakis
+    location: University of Wisconsin - Madison
+    cite_name: E. Sifakis
+videos:
+  - poster_url: movie-still.png
+    src_url: http://pages.cs.wisc.edu/~nmitchel/project_pages/gridiron/movie.mp4
+abstract: >-
+  We present an interactive simulation framework for authoring
+  surgical procedures of soft tissue manipulation using
+  physics-based simulation to animate the flesh. This interactive
+  authoring tool can be used by clinical educators to craft
+  three-dimensional illustrations of the intricate maneuvers involved
+  in craniofacial repairs, in contrast to two-dimensional
+  sketches and still photographs which are the medium used
+  to describe these procedures in the traditional surgical curriculum.
+  Our virtual environment also allows surgeons-intraining
+  to develop cognitive skills for craniofacial surgery
+  by experimenting with different approaches to reconstructive
+  challenges, adapting stock techniques to flesh regions
+  with nonstandard shape, and reach preliminary predictions
+  about the feasibility of a given repair plan. We use a Cartesian
+  grid-based embedded discretization of nonlinear elasticity
+  to maximize regularity, and expose opportunities for
+  aggressive multithreading and SIMD accelerations. Using a
+  grid-based approach facilitates performance and scalability,
+  but constrains our ability to capture the topology of thin surgical
+  incisions. We circumvent this restriction by hybridizing
+  the grid-based discretization with an explicit hexahedral
+  mesh representation in regions where the embedding mesh
+  necessitates overlap or nonmanifold connectivity. Finally, we
+  detail how the front-end of our system can run on lightweight
+  clients, while the core simulation capability can be hosted on
+  a dedicated server and delivered as a network service.
+code:
+  - url: http://pages.cs.wisc.edu/~nmitchel/project_pages/gridiron/simd_vector_kernels.tar.gz
+    description: >-
+      SIMD (Single Instruction Multiple Data) numerical kernels used
+      for accelerating finite element computations on hardware with
+      vector instruction sets (SSE, AVX, MIC).
+
+      
+
+  
+---
