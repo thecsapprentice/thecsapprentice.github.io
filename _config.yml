@@ -2,3 +2,6 @@ collections:
   projects:
     output: true
     permalink: /project_pages/:path/
+  publications:
+    output: true
+    permalink: /publications/:path/
