@@ -19,7 +19,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Research Projects <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        {% for project in site.collections.[projects].docs %}
+                        {% for project in site.collections['projects'].docs %}
                         <li><a href="{{site.url}}{{ project.url }}">{{ project.short_title }}</a></li>
                         {% endfor %}
                     </ul>
