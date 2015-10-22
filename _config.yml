@@ -1,4 +1,4 @@
 collections:
-  projects:
-    output: true
-    permalink: /project_pages/:path/
+  - projects:
+      output: true
+      permalink: /project_pages/:path/
