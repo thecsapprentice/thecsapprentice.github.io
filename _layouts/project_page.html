@@ -58,8 +58,8 @@
                 <span class="titleline">Cite</span>
                 <div class="citation-block">
                     <div class="citation-downloads">
-                        <a href="{{ page.paper_url }}" class="paper-link">[Download]</a>
-                        <a href="{{ page.bibtex_url }}" class="paper-bibtex">[Bibtex]</a>
+                        {% if page.paper_url %}<a href="{{ page.paper_url }}" class="paper-link">[Download]</a>{% endif %}
+                        {% if page.bibtex_url %}<a href="{{ page.bibtex_url }}" class="paper-bibtex">[Bibtex]</a>{% endif %}
                     </div>
                     <div class="citation">
                         <span class="paper-authors">{% for author in page.paper_authors %}{{ author.cite_name }}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}</span>
