@@ -5,3 +5,5 @@ collections:
   publications:
     output: true
     permalink: /publications/:path/
+
+name: Nathan Mitchell's Website
