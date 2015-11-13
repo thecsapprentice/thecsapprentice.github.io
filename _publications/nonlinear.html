@@ -1,0 +1,41 @@
+---
+layout: project_page
+short_title: Nonlinear Elastic Bodies
+paper_title: "Simulation of Complex Nonlinear Elastic Bodies using Lattice Deformers"
+paper_url: http://pages.cs.wisc.edu/~sifakis/papers/nonlinear_lattice_deformer.pdf
+paper_venue: in proceedings of ACM SIGGRAPH Asia
+paper_year: 2012
+paper_authors:
+  - name: Taylor Patterson
+    location: University of Wisconsin - Madison
+    cite_name: T. Patterson
+  - name: Nathan Mitchell
+    location: University of Wisconsin - Madison
+    cite_name: N. Mitchell
+  - name: Eftychios Sifakis
+    location: University of Wisconsin - Madison
+    cite_name: E. Sifakis
+videos:
+  - poster_url: missing
+    src_url: missing
+abstract: >-
+ Lattice deformers are a popular option for modeling the behavior
+ of elastic bodies as they avoid the need for conforming mesh gen-
+ eration, and their regular structure offers significant opportunities
+ for performance optimizations. Our work expands the scope of cur-
+ rent lattice-based elastic deformers,  adding support for a number
+ of important simulation features.  We accommodate complex non-
+ linear, optionally anisotropic materials while using an economical
+ one-point quadrature scheme. Our formulation fully accommodates
+ near-incompressibility by enforcing accurate nonlinear constraints,
+ supports implicit integration for large time steps,  and is not sus-
+ ceptible to locking or poor conditioning of the discrete equations.
+ Additionally, we increase the accuracy of our solver by employing
+ a novel high-order quadrature scheme on lattice cells overlapping
+ with the model boundary, which are treated at sub-cell precision.
+ Finally, we detail how this accurate boundary treatment can be im-
+ plemented at a minimal computational premium over the cost of a
+ voxel-accurate discretization.  We demonstrate our method in the
+ simulation of complex musculoskeletal human models.
+  
+---

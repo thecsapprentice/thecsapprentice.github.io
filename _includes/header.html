@@ -29,8 +29,12 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Publications <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        {% for paper in site.collections['publications'].docs %}
+                        {% assign collection = site.collections['publications'].docs | group_by:"paper_year" | sort: 'name' | reverse %}
+                        {% for yeargroup in collection %}
+                        <li class="pub-year-label">{{ yeargroup.name }}</li>
+                        {% for paper in yeargroup.items %}
                         <li><a href="{{site.url}}{{ paper.url }}">{{ paper.short_title }}</a></li>
+                        {% endfor %}
                         {% endfor %}
                     </ul>
                 </li>
