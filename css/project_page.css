@@ -89,14 +89,34 @@ body {
 
 
 #videos{
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#videos .video_container {
+    width: 80%;
+}
+
+.video_container .caption{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    display: block;
+    background: dimgrey;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+
 }
 
 #videos video{
-    width: 80%    !important;
-    height: 80%   !important;
+    width: 100%    !important;
+    height: auto   !important;
 }
 
 

@@ -28,11 +28,13 @@
 
             <div id="videos" >
                 {% for video in page.videos %}
-                <video controls poster="{{ video.poster_url }}">
-                    <source src="{{ video.src_url }}" type="video/mp4">
-                    I'm sorry; your browser doesn't support HTML5 video in MP4 with H.264. 
-                    <a href="{{ video.src_url }}">Try downloading the video instead.</a>
-                </video>
+                <div class="video_container">
+                    <video controls poster="{{ video.poster_url }}">
+                        <source src="{{ video.src_url }}" type="video/mp4">
+                        I'm sorry; your browser doesn't support HTML5 video in MP4 with H.264. 
+                        <a href="{{ video.src_url }}">Try downloading the video instead.</a>
+                    </video>
+                </div>
                 {% endfor %}
             </div>
 

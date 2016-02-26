@@ -1,4 +1,7 @@
 collections:
+  research:
+    output: true
+    permalink: /research_pages/:path/
   projects:
     output: true
     permalink: /project_pages/:path/
@@ -7,3 +10,5 @@ collections:
     permalink: /publications/:path/
 
 name: Nathan Mitchell's Website
+
+exclude: [vendor]

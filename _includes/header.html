@@ -18,10 +18,11 @@
                 <!-- <li><a href="#">Link</a></li> -->
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Research<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Research Interests<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        {% for project in site.collections['projects'].docs %}
-                        <li><a href="{{site.url}}{{ project.url }}">{{project.short_title }}</a></li>
+                        {% assign research_collection = site.collections | where: "label", "research" | first %}
+                        {% for research in research_collection.docs %}
+                        <li><a href="{{site.url}}{{ research.url }}">{{research.short_title }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
@@ -29,8 +30,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Publications <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        {% assign collection = site.collections['publications'].docs | group_by:"paper_year" | sort: 'name' | reverse %}
-                        {% for yeargroup in collection %}
+                        {% assign doc_collection = site.collections | where: "label", "publications" | first %}
+                        {% assign publications = doc_collection.docs | group_by:"paper_year" | sort: 'name' | reverse %}
+                        {% for yeargroup in publications %}
                         <li class="pub-year-label">{{ yeargroup.name }}</li>
                         {% for paper in yeargroup.items %}
                         <li><a href="{{site.url}}{{ paper.url }}">{{ paper.short_title }}</a></li>
@@ -38,6 +40,17 @@
                         {% endfor %}
                     </ul>
                 </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Projects<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        {% assign project_collection = site.collections | where: "label", "projects" | first %}
+                        {% for project in project_collection.docs %}
+                        <li><a href="{{site.url}}{{ project.url }}">{{project.short_title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+
             </ul>            
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->   
