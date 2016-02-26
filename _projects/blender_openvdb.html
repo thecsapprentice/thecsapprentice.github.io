@@ -1,0 +1,51 @@
+---
+layout: default
+title: Blender + OpenVDB Integration
+short_title: Blender + OpenVDB Integration
+
+---
+
+<h2>Blender with OpenVDB Integration</h2>
+
+This is work that I started in support of various research projects that my group at Wisconsin were performing with simulated fluids. The challenge was that we needed a modern rendering solution for fluid surfaces that could
+<ul>
+    <li> produce high quality results</li>
+    <li> be easy to use </li>
+    <li> run on Linux clusters </li>
+    <li> directly ray-cast level sets </li>
+</ul>
+
+<p>We had been using <a href="http://www.blender.org">Blender</a> for many of our projects before this point, and had quite successfully integrated it into our toolchain for solids rendering. Rendering fluids, however, posed a unique challenge where the surface geometry was extremely complex, highly time varying, and would have required topological remeshing every frame, risking the introduction of 'popping' artifacts. We had access to an older renderer which could directly render fluids stored as level sets, via a ray casting process. However, it was slow (not multithreaded!), and its support for dynamic lighting and shading was poor. </p>
+
+<p>In my attempts to get the best of both worlds, I got in contact with <a href="http://wiki.blender.org/index.php/User:Kevindietrich">Kevin Dietrich</a> who had worked on integrating <a href="http://www.openvdb.org">OpenVDB</a> support into Blender for the purposes of rendering smoke and meshing particles. Using his changes as a foundation, I moved on to add support for rendering level sets as surfaces within Cycles, including shader support. </p>
+
+<p>Anyone who is interested in checking out the current status of this project can checkout my modified Blender codebase here:
+<br>
+<a href="https://github.com/thecsapprentice/blender-cycles_openvdb">blender-cycles_openvdb @ github</a>
+</p>
+
+<!--
+Here are some sample videos created with the OpenVDB enhanced Blender. These simulations were done with our group's own fluid simulation solver and then exported to OpenVDB for rendering within Blender.
+<div id="videos" >
+    <div class="video_container">
+        <video controls poster="">
+            <source src="" type="video/mp4">
+            I'm sorry; your browser doesn't support HTML5 video in MP4 with H.264. 
+            <a href="">Try downloading the video instead.</a>
+        </video>
+        <span class="caption">
+            This is a realistic style render, where the fluid is rendered with a clear glass surface shader and a volumetric absorption node for the blue tinting.
+        </span>
+    </div>
+    <div class="video_container">
+        <video controls poster="">
+            <source src="" type="video/mp4">
+            I'm sorry; your browser doesn't support HTML5 video in MP4 with H.264. 
+            <a href="">Try downloading the video instead.</a>
+        </video>
+        <span class="caption">
+            The same simulation as above, only with a glossy shader colored according to the Z-height of the fluid to highlight detail.
+        </span>    
+    </div>
+</div>
+-->
