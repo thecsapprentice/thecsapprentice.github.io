@@ -5,6 +5,8 @@ paper_title: "Steklov-Poincaré Skinning"
 paper_url: http://pages.cs.wisc.edu/~sifakis/papers/steklov_poincare_skinning_sca2014.pdf
 paper_venue: Eurographics/ACM SIGGRAPH Symposium on Computer Animation
 paper_year: 2014
+timeline_order: 30
+timeline_venue: SCA 2014
 paper_authors:
   - name: Ming Gao
     location: University of Wisconsin - Madison
@@ -21,18 +23,18 @@ videos:
 abstract: >-
   We  introduce  a  novel  and  efficient  simulation  technique  for  generating  physics-based  skinning  animations  of
   skeleton-driven characters with full support for collision handling. Although physics-based approaches may use
-  a volumetric (e.g. tetrahedral) flesh model, operations such as rendering, collision processing and user manip-
-  ulation directly involve only the surface of this mesh. Motivated by this fact we define an elastic model of the
+  a volumetric (e.g. tetrahedral) flesh model, operations such as rendering, collision processing and user manipulation
+  directly involve only the surface of this mesh. Motivated by this fact we define an elastic model of the
   skin surface which, while directly using only the surface degrees of freedom, exhibits a mechanical response that
-  captures the full volumetric flesh behavior. We achieve this unusual result by combining three fundamental con-
-  tributions: First, we present a material model which offers a plausible approximation to corotational elasticity at
+  captures the full volumetric flesh behavior. We achieve this unusual result by combining three fundamental contributions:
+  First, we present a material model which offers a plausible approximation to corotational elasticity at
   significantly reduced cost, by computing local rotations via procedural skinning rather than deriving them from
   the mesh deformation; the result is a force model which is affine on vertex positions, with coefficients dependent
-  on the skeletal pose (but not on the deformation). Second, we use this force model to derive a direct mapping be-
-  tween surface vertex positions and resulting equilibrium forces on the same boundary vertices, which is a discrete
+  on the skeletal pose (but not on the deformation). Second, we use this force model to derive a direct mapping between
+  surface vertex positions and resulting equilibrium forces on the same boundary vertices, which is a discrete
   version of the Steklov-Poincaré operator of the volumetric elastic model. This mapping is conveniently shown to
   also be affine (with pose-dependent coefficients), but with a dense stiffness matrix which renders direct numerical
-  solution impractical. However, as a third and final step we show how a modified Newton iteration and a skinning-
+  solution impractical. However, as a third and final step we show how a modified Newton iteration and a skinning
   inspired preconditioner can solve the boundary problem with a competitive runtime cost. We assess the efficacy of
   our solution in simulations of high resolution human flesh models, with full external and self-collision processing.
 ---

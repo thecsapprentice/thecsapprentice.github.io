@@ -11,3 +11,33 @@ title: Nathan Mitchell
 <p>My advisor at the University of Wisconsin is <a href="http://pages.cs.wisc.edu/~sifakis">Eftychios Sifakis</a>. Before I began my graduate program, I attended the <a href="http://www.edinboro.edu/academics/schools-and-departments/cshp/departments/mcs/index.html">University of Edinboro</a> in Pennsylvania for my undergraduate degree in computer science. I have also worked with the Math and Computer Science division of Argonne National Labs, where I helped develop software for managing cluster provisioning.</p>
 
 <p>In my personal time, I am an avid enthusiast of board games and tabletop RPGS. I also enjoy baking desserts.</p>
+
+<div class='timelineSection'>
+  <div class='timeline'>
+    <div class='timelineLine'></div>
+    <div class='timelineZone'>
+
+      {% assign doc_collection = site.collections | where: "label", "publications" | first %}
+      {% assign publications = doc_collection.docs | group_by:"paper_year" | sort: 'name' | reverse %}
+      {% for yeargroup in publications %}
+      {% for paper in yeargroup.items %}
+
+      <div class='poi active timelinePoi' tltime='{{ paper.timeline_order }}'>
+        <div class='caption'>
+          <div class='titlebar'>
+          <a href="{{site.url}}{{ paper.url }}" class="articleLink-left"><span class="glyphicon glyphicon-fullscreen"></span></a>
+          <h2 class='title'><span>{{ paper.timeline_venue }} - {{ paper.short_title }}</span></h2>
+          <a href="{{site.url}}{{ paper.url }}" class="articleLink-right"><span class="glyphicon glyphicon-fullscreen"></span></a>
+        </div>
+          <div class='body'><p>
+          {{ paper.abstract }}
+        </div></div>
+      </div>
+
+      {% endfor %}
+      {% endfor %}
+
+
+    </div>
+  </div>
+</div>
