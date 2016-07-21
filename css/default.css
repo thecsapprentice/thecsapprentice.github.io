@@ -3,3 +3,7 @@
     float: left;
     margin: 10px;
 }
+
+#scrollspacer {
+    height: 300px;
+}

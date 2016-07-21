@@ -119,6 +119,10 @@ body {
     height: auto   !important;
 }
 
+#videos img{
+    width: 100%    !important;
+    height: auto   !important;
+}
 
 .code-block{
     font-family: 'Cabin', sans-serif;     
@@ -175,4 +179,15 @@ body {
 
 .citation .paper-venue{
     font-style: italic;
+}
+
+.doi-block{
+    font-family: 'Cabin', sans-serif;     
+    display: flex;
+}
+
+.doi-block .block-label{
+    min-width: 90px;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;  
 }

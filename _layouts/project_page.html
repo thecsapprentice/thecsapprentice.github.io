@@ -29,11 +29,15 @@
             <div id="videos" >
                 {% for video in page.videos %}
                 <div class="video_container">
+                    {% if video.src_url %}
                     <video controls poster="{{ video.poster_url }}">
                         <source src="{{ video.src_url }}" type="video/mp4">
                         I'm sorry; your browser doesn't support HTML5 video in MP4 with H.264. 
                         <a href="{{ video.src_url }}">Try downloading the video instead.</a>
                     </video>
+                    {% else %}
+                    <img src="{{ video.poster_url }}" />
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
@@ -76,10 +80,16 @@
                         <span class="paper-venue">
                             {{ page.paper_venue }}, {{ page.paper_year }}
                         </span>  
+                    </div>
                 </div>
+                {% if page.doi %}
+                <div class="doi-block">
+                    <span class="block-label">DOI:</span>
+                    <span class="block-content"><a href="http://dx.doi.org/{{ page.doi }}">doi:{{ page.doi }}</a></span>
+                </div>
+                {% endif %}
             </div>
-        </div>
-
-        {% include footer.html %}
+            
+            {% include footer.html %}
     </body>
 </html>

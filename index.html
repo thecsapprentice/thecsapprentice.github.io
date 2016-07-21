@@ -30,7 +30,7 @@ title: Nathan Mitchell
           <a href="{{site.url}}{{ paper.url }}" class="articleLink-right"><span class="glyphicon glyphicon-fullscreen"></span></a>
         </div>
           <div class='body'><p>
-          {{ paper.abstract }}
+          {{ paper.abstract | truncate: 250 }}
         </div></div>
       </div>
 
@@ -41,3 +41,5 @@ title: Nathan Mitchell
     </div>
   </div>
 </div>
+
+<div id="scrollspacer" > </div>
