@@ -7,3 +7,13 @@
 #scrollspacer {
     height: 300px;
 }
+
+#TRIGGER {
+    background-color: red;
+    width: 600px;
+    height: 5px;
+    position: absolute;
+    left: 0px;
+    top: 160.2px;
+    z-index: 2000;
+}

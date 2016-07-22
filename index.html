@@ -12,6 +12,8 @@ title: Nathan Mitchell
 
 <p>In my personal time, I am an avid enthusiast of board games and tabletop RPGS. I also enjoy baking desserts.</p>
 
+<!-- <div id="TRIGGER" > </div> -->
+
 <div class='timelineSection'>
   <div class='timeline'>
     <div class='timelineLine'></div>
@@ -22,16 +24,18 @@ title: Nathan Mitchell
       {% for yeargroup in publications %}
       {% for paper in yeargroup.items %}
 
-      <div class='poi active timelinePoi' tltime='{{ paper.timeline_order }}'>
+      <div class='poi active timelinePoi' tltime='{{ paper.timeline_order }}' url="{{site.url}}{{ paper.url }}">
         <div class='caption'>
-          <div class='titlebar'>
-          <a href="{{site.url}}{{ paper.url }}" class="articleLink-left"><span class="glyphicon glyphicon-fullscreen"></span></a>
-          <h2 class='title'><span>{{ paper.timeline_venue }} - {{ paper.short_title }}</span></h2>
-          <a href="{{site.url}}{{ paper.url }}" class="articleLink-right"><span class="glyphicon glyphicon-fullscreen"></span></a>
+            <div class="caption-img"><img src="{{ paper.rep_image }}" /></div>
+            <div class="caption-text">
+                <div class='titlebar'>
+                    <h2 class='title'><span>{{ paper.timeline_venue }} - {{ paper.short_title }}</span></h2>
+                </div>
+                <div class='body'><p>
+                    {{ paper.abstract | truncate: 250 }}
+                </div>
+            </div>
         </div>
-          <div class='body'><p>
-          {{ paper.abstract | truncate: 250 }}
-        </div></div>
       </div>
 
       {% endfor %}
