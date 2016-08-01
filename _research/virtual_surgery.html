@@ -2,29 +2,145 @@
 layout: default
 title: Virtual Surgery
 short_title: Virtual Surgery
+custom_css: virtual_surgery.css
 
 ---
 
 <h2>Virtual Plastic Surgery</h2>
 
-Exploring the idea of bringing together deformable object simulation and plastic surgery is the primary focus of my Ph.D work at the University of Wisconsin. The goals of this project are far reaching, but in short, we aim to provide surgeons a three dimensional authoring environment in which they can craft complex repairs, simulate the potential success of an operation, and record their knowledge of procedures as future resources for education.
+<p>Exploring the idea of bringing together deformable
+object simulation and plastic surgery is the
+primary focus of my Ph.D work at the University of
+Wisconsin. The goals of this project are far
+reaching, but in short, we aim to provide surgeons
+a three dimensional authoring environment in which
+they can craft complex repairs, simulate the
+potential success of an operation, and record
+their knowledge of procedures as future resources
+    for education.</p>
 
 <h3>Goals and Challanges</h3>
 
-In more detail, the virtual surgery project has many specific goals in mind:
+In more detail, the virtual surgery project has
+many specific goals in mind:
 <ul>
-    <li><span>Real Time Simulation</span><p>As a tool for education and experimentation, it is important that the simulation be responsive to the user. While there may be room for slower, more accurate simulations in prediction oriented tasks, during authoring scenarios the tool must respond in real time to a surgeons actions.</p>
+    <li><div class="caption">
+        <span>Real Time Simulation</span>
+        <p>
+            As a tool for education and experimentation, it is
+            important that the simulation be responsive to
+            the user. While there may be room for slower,
+            more accurate simulations in prediction
+            oriented tasks, during authoring scenarios the
+            tool must respond in real time to a surgeons
+            actions.
+        </p>
+        <p>
+            Complicating this requirement is the
+            fact that many common platforms,
+            (cellphones, tablets, most desktops)
+            simply lack the nessessary
+            computational performance to deliver
+            accurate simulations under realtime
+            constraints. As such, this project is
+            also exploring methods of providing
+            simulation as a service, relagating
+            intensive computational workloads to a
+            remote server infrastructure.
+        </p>
+    </div>
+    <div class="figure">
+    </div>
     </li>
-    <li><span>Arbitrary Incision Support</span><p>It is important that users are not restricted as to how cuts are performed in the virtual tissue. Procedure design is complex and often requires dealing with the geometry of the local skin region on a case by case basis. As such, freeform cutting must be supported to grant the user this needed flexiblity.</p>
+    
+    <li><div class="caption">
+        <span>Context-Aware Incision Support</span>
+        <p>
+            It is important that users are not restricted as
+            to how cuts are performed in the virtual
+            tissue. Procedure design is complex and often
+            requires dealing with the geometry of the
+            local skin region on a case by case basis. As
+            such, freeform cutting must be supported to
+            grant the user this needed flexiblity.
+        </p>
+        <p>
+            However, it is insufficient to merely
+        cut into a geometric model
+        blindly. Anatomical details act as
+        important constraints during an operation,
+        which trained surgeons use in making
+        decisions about their patient's
+        operation. As such, any cutting algorithm
+        or interface to such must take anatomical
+        context into consideration when
+        determining aspects such as depth and
+        angle of any cut.
+        </p>
+    </div>
+    <div class="figure">
+    </div>
     </li>
+
+    <li><div class="caption">
+        <span>Biological modeling</span>
+        <p>
+            Correctly capturing the biological
+        details of the human body is essential to
+        surgical simulation. While the obvious
+        details include appropriate anatomical
+        modeling for geometry, there are other,
+        less obvious, considerations that need to
+        be made for plastic surgery simulations.
+        </p>
+        <p>
+            Along with the geometric extents of
+        the human body, physically accurate
+        material models also must be provided for
+        useful simulation. In plastic surgery, one
+        common and important task is the closing
+        of wounds or holes. Proper limiting of
+        tissue elasticity is essential to
+        determining if a proposed tissue flap
+        created by a surgeon can be successfully
+        used to close such wounds.
+        </p>
+        <p>
+            Beyond the norm, there are then the
+        patient specific modeling parameters. From
+        extreme geometry due to injury or genetic
+        defects, to wildly varying material
+        parameters due to a host of factors,
+        including age, gender, and ethnicity,
+        creating an accurate model that represents
+        a single patient can be a incredibly
+        complex proposition.
+        </p>
+    </div>
+    <div class="figure">
+    </div>
+    </li>
+
+        
+    
 </ul>
     
-<h3>Publications</h3>
+<h3>Related Publications</h3>
 
 <div class="citation">
     <a href="/publications/gridiron"><span class="paper-authors"> N. Mitchell, C. Cutting, E. Sifakis</span><span class="paper-title">GRIDiron: An Interactive Authoring and Cognitive Training Foundation for Reconstructive Plastic Surgery Procedures</span><span class="paper-venue">in proceedings of ACM SIGGRAPH, 2015</span></a>
 </div>
-
+<br/>
 <div class="citation">
     <a href="/publications/nonmanifold_levelsets"><span class="paper-authors">N. Mitchell, M. Aanjaneya, R. Setaluri, E. Sifakis</span> <span class="paper-title">Non-manifold Level Sets: A multivalued implicit surface representation with applications to self-collision processing</span><span class="paper-venue">in proceedings of ACM SIGGRAPH Asia, 2015</span></a>
+</div>
+<br/>
+<div class="citation">
+    <a href="/publications/localflaps"><span class="paper-authors">N. Mitchell, C. Cutting, T. King, A. Oliker, E. Sifakis</span>
+    <span class="paper-title">
+        A Real-Time Local Flaps Surgical Simulator Based on Advances in Computational Algorithms for Finite Element Models
+    </span>
+    <span class="paper-venue">
+        Plastic &amp; Reconstructive Surgery. 137(2):445e-452e, February 2016., 2016
+    </span></a>
 </div>

@@ -1,0 +1,34 @@
+.email {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.email div {
+    display: inline-block;
+    width: 100%;
+}
+
+
+.email .glyphicon {
+    position: initial;
+    width: 100px;
+}
+
+
+.phone {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+.phone div {
+    display: inline-block;
+    width: 100%;
+}
+
+.phone .glyphicon {
+    position: initial;
+    width: 100px;
+}

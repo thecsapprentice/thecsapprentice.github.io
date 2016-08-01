@@ -1,0 +1,21 @@
+li {
+    display: flex;
+    flex-direction: row;
+}
+
+div.caption{
+    width: 50%;
+}
+
+div.caption span {
+    font-weight: bold;
+
+}
+
+div.caption p {
+    margin-left: 2em;
+}
+
+div.figure {
+    width: 50%;
+}

@@ -20,8 +20,8 @@ $(function(){
             akey = parseInt($(a).attr("tltime"));
             bkey = parseInt($(b).attr("tltime"));
             if (akey == bkey) return 0;
-            if (akey < bkey) return -1;
-            if (akey > bkey) return 1;
+            if (akey > bkey) return -1;
+            if (akey < bkey) return 1;
         })
         var timeI = 0;
         $(".timelinePoi").each(function(index, element){
@@ -31,7 +31,8 @@ $(function(){
             var parentIndex = (Array.prototype.indexOf.call( parent.children, element)+1);
             console.log( "Parent Index: ", parentIndex );
             var pos =  (1-( parentIndex / parent.children.length ))*100;
-            $(this).css("top",pos+"%").removeClass("active");
+//            $(this).css("top",pos+"%");
+            $(this).removeClass("active");
             if ( timeI%2==0 ) { $(this).addClass("rightAlign"); }
             var title = $(this).find(".title").html().split("<span>")[1].split("</span>")[0];
             var titleTime = title.split(" - ")[0];
@@ -63,9 +64,12 @@ $(function(){
             $(".timelinePoi.previous").removeClass("previous");
             $(".timelinePoi.previous2").removeClass("previous2");
             activeTime.addClass("active");
-            if ( $(window).width() > 668 ) {
-                activeTime.prev(".timelinePoi").addClass("active previous");
-                activeTime.prev(".timelinePoi").prev(".timelinePoi").addClass("active previous2");
+            if ( $(window).width() > 670 ) {
+                activeTime.next(".timelinePoi").addClass("active previous");
+                activeTime.next(".timelinePoi").next(".timelinePoi").addClass("active previous2");
+            }
+            else{
+                activeTime.next(".timelinePoi").addClass("active previous");
             }
             console.log("----------------------" );
         }
