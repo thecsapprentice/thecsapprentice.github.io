@@ -24,7 +24,7 @@
 
 /* ------ POINT OF INTEREST ELEMENTS ------ */
 
-.poi { position: relative; display: inline-block; width: 6.25em; height: 6.25em; margin: -3.125em; width: 3.125em; height: 3.125em; margin: -1.5625em; z-index: 3; cursor: pointer; color: #773076; overflow: hidden;
+.poi { position: relative; display: block; margin: -3.125em; width: 3.125em; height: 250px; margin: -1.5625em; z-index: 3; cursor: pointer; color: #773076; overflow: hidden;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
   filter: alpha(opacity=75);
   -moz-opacity: .75;
@@ -36,7 +36,7 @@
   -o-transition: .25s ease-out;
   transition: .25s ease-out;
 }
-.poi:after { display: block; content: ''; position: absolute; top: 50%; left: 50%; width: 40%; height: 40%; margin: -20%; background: #773076;
+.poi:after { display: block; content: ''; position: absolute; top: 7.5px; left: 50%; width: 15px; height: 15px; margin: -20%; background: #773076;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   -ms-border-radius: 100%;
@@ -93,7 +93,7 @@
   57% { opacity: 1; transform: scale(1.15); }
   100% { opacity: 1; transform: scale(1); }
 }
-.poi:before { display: block; content: ''; position: absolute; top: 50%; left: 50%; width: 64%; height: 64%; margin: -32%; border: 2px solid #773076;
+.poi:before { display: block; content: ''; position: absolute; top: 5.5px; left: 20px; width: 30px; height: 30px; margin: -32%; border: 2px solid #773076;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   -ms-border-radius: 100%;
@@ -150,7 +150,7 @@
 .poi:nth-child(7):before, .poi:nth-child(14):before {
   animation-delay: .9s;
 }
-.poi .caption { position: absolute; top: 50%; left: 98%; line-height: 1.2em; margin: -.6em 0; width: 600px; text-transform: uppercase; font-weight: 700;
+.poi .caption { position: absolute; left: 98%; line-height: 1.2em; margin: -.6em 0; width: 600px; text-transform: uppercase; font-weight: 700;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
   -moz-opacity: 0;
@@ -292,13 +292,13 @@
 .infoBox .title { text-transform: uppercase; }
 
 
-.timeline { position: relative; padding: 5em 0 40em; }
+.timeline { position: relative; padding: 5em 0 5em; }
 
 .timeline:after { content: ''; display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 20em; z-index: 1;
 }
 .timelineZone { position: relative; height: 155em; }
 
-.timelineLine { position: absolute; top: 0; height: 100%; width: 4px; margin-left: -2px;
+.timelineLine { position: absolute; top: 0; height: 75%; width: 4px; margin-left: -2px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+1,1+100 */
 background: -moz-linear-gradient(top, rgba(162,224,255,0) 0%, rgba(162,224,255,0) 1%, rgba(162,224,255,1) 5%, rgba(162,224,255,1) 95%, rgba(162,224,255,0) 99%, rgba(162,224,255,0) 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top, rgba(162,224,255,0) 0%, rgba(162,224,255,0) 1%, rgba(162,224,255,1) 5%, rgba(162,224,255,1) 95%, rgba(162,224,255,0) 99%, rgba(162,224,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -311,7 +311,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   opacity: .4;
 }
 
-.timelinePoi { position: absolute; top: 0; overflow: visible; }
+.timelinePoi { top: 0; overflow: visible; }
 .timelinePoi .caption { margin-top: -1px;
 
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+1,1+100 */
@@ -360,7 +360,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   -khtml-opacity: .33;
   opacity: .33;
 }
-.timelinePoi .time { position: absolute; display: inline-block; top: 50%; left: 98%; margin-left: 0; padding-right: .5em; font-size: 1em; line-height: 1.2em; margin-top: -.6em; font-family: Roboto, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700;
+.timelinePoi .time { position: absolute; display: inline-block; left: 98%; margin-left: 0; padding-right: .5em; font-size: 1em; line-height: 1.2em; margin-top: -.6em; font-family: Roboto, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700;
   -moz-transition: all .25s ease-out;
   -webkit-transition: all .25s ease-out;
   -ms-transition: all .25s ease-out;
@@ -390,4 +390,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 .caption-text {
     margin-left: 10px;
+}
+
+@media (max-width: 670px) {
+    .timelinePoi .caption {
+        width: 300px;
+        flex-direction: column;
+    }
+
+    .poi {
+        height: 500px;
+
+    }
+
+    .timelineLine { height: 150%; }
 }

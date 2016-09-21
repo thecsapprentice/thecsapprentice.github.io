@@ -8,8 +8,10 @@
     <meta name="description" content="{{ site.description }}">
     <link href="/css/project_page.css" rel="stylesheet" type="text/css" />
     <link href="/css/default.css" rel="stylesheet" type="text/css" />
-
-    {% include bootstrap_head_matter.html %}   
+    {% include bootstrap_head_matter.html %}
+    {% if page.custom_css %}
+    <link href="/css/{{ page.custom_css }}" rel="stylesheet" type="text/css" />
+    {% endif %}
   </head>
 
   <body>
