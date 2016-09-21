@@ -7,7 +7,10 @@ short_title: Blender + OpenVDB Integration
 
 <h2>Blender with OpenVDB Integration</h2>
 
-This is work that I started in support of various research projects that my group at Wisconsin were performing with simulated fluids. The challenge was that we needed a modern rendering solution for fluid surfaces that could
+This is work that I started in support of various research projects
+that my group at Wisconsin were performing with simulated fluids. The
+challenge was that we needed a modern rendering solution for fluid
+surfaces that could
 <ul>
     <li> produce high quality results</li>
     <li> be easy to use </li>
@@ -15,37 +18,88 @@ This is work that I started in support of various research projects that my grou
     <li> directly ray-cast level sets </li>
 </ul>
 
-<p>We had been using <a href="http://www.blender.org">Blender</a> for many of our projects before this point, and had quite successfully integrated it into our toolchain for solids rendering. Rendering fluids, however, posed a unique challenge where the surface geometry was extremely complex, highly time varying, and would have required topological remeshing every frame, risking the introduction of 'popping' artifacts. We had access to an older renderer which could directly render fluids stored as level sets, via a ray casting process. However, it was slow (not multithreaded!), and its support for dynamic lighting and shading was poor. </p>
+<p>We had been using <a href="http://www.blender.org">Blender</a> for
+many of our projects before this point, and had quite successfully
+integrated it into our toolchain for solids rendering. Rendering
+fluids, however, posed a unique challenge where the surface geometry
+was extremely complex, time varying, and would have required
+topological remeshing every frame, risking the introduction of
+'popping' artifacts. We had access to an older renderer which could
+directly render fluids stored as level sets and smoke volumes, via a ray casting
+algorithm. However, it was slow (not multithreaded!), and its support
+for dynamic lighting and shading was poor. </p>
 
-<p>In my attempts to get the best of both worlds, I got in contact with <a href="http://wiki.blender.org/index.php/User:Kevindietrich">Kevin Dietrich</a> who had worked on integrating <a href="http://www.openvdb.org">OpenVDB</a> support into Blender for the purposes of rendering smoke and meshing particles. Using his changes as a foundation, I moved on to add support for rendering level sets as surfaces within Cycles, including shader support. </p>
+<p>In my attempts to get the best of both worlds, I got in contact
+with <a href="http://wiki.blender.org/index.php/User:Kevindietrich">Kevin Dietrich</a> who had worked on integrating <a href="http://www.openvdb.org">OpenVDB</a> support
+into Blender for the purposes of rendering smoke and meshing
+particles. Using his changes as a foundation, I moved on to add
+support for rendering level sets as surfaces within Cycles, including
+shader support. </p>
 
-<p>Anyone who is interested in checking out the current status of this project can checkout my modified Blender codebase here:
+<p>Anyone who is interested in checking out the current status of this
+project can checkout my modified Blender codebase here:
 <br>
 <a href="https://github.com/thecsapprentice/blender-cycles_openvdb">blender-cycles_openvdb @ github</a>
 </p>
 
-<!--
-Here are some sample videos created with the OpenVDB enhanced Blender. These simulations were done with our group's own fluid simulation solver and then exported to OpenVDB for rendering within Blender.
+
+Here are some sample videos created with the OpenVDB enhanced
+Blender. These simulations were done with our group's own fluid
+simulation solver and then exported to OpenVDB for rendering within
+Blender. For more information on the simulations and the solver used
+to produce them, please take a look at our Siggraph Asia 2016
+publication on <a href="{{site.baseurl}}/publications/scalable_schur_fluids/">scalable Schur-complement fluids</a>.
+
 <div id="videos" >
     <div class="video_container">
         <video controls poster="">
-            <source src="" type="video/mp4">
+            <source src="http://pages.cs.wisc.edu/~nmitchel/project_pages/openvdb_blender/water_channel_blue.mp4" type="video/mp4">
             I'm sorry; your browser doesn't support HTML5 video in MP4 with H.264. 
             <a href="">Try downloading the video instead.</a>
         </video>
         <span class="caption">
-            This is a realistic style render, where the fluid is rendered with a clear glass surface shader and a volumetric absorption node for the blue tinting.
+            This is a realistic style render, where the fluid is rendered with a clear glass surface shader and a volumetric absorption node for the blue tinting. Total render time was approximately 360 CPU hours, with a frame count of 540 frames.
         </span>
     </div>
     <div class="video_container">
         <video controls poster="">
-            <source src="" type="video/mp4">
+            <source src="http://pages.cs.wisc.edu/~nmitchel/project_pages/openvdb_blender/water_channel_zheight.mp4" type="video/mp4">
             I'm sorry; your browser doesn't support HTML5 video in MP4 with H.264. 
             <a href="">Try downloading the video instead.</a>
         </video>
         <span class="caption">
-            The same simulation as above, only with a glossy shader colored according to the Z-height of the fluid to highlight detail.
+            The same simulation as above, only with a glossy shader colored according to the Z-height of the fluid to highlight detail. Total render time was approximately 346 CPU hours, with a frame count of 520 frames.
+        </span>    
+    </div>
+    <div class="video_container">
+        <video controls poster="">
+            <source src="http://pages.cs.wisc.edu/~nmitchel/project_pages/openvdb_blender/DragonSplash2.mov" type="video/mp4">
+            I'm sorry; your browser doesn't support HTML5 video in MP4 with H.264. 
+            <a href="">Try downloading the video instead.</a>
+        </video>
+        <span class="caption">
+            In this simulation, water is poured from above into a tray containing sixteen dragon sculptures. Total render time was approximately 213 CPU hours, for a total frame count of 320 frames.
+        </span>    
+    </div>
+    <div class="video_container">
+        <video controls poster="">
+            <source src="http://pages.cs.wisc.edu/~nmitchel/project_pages/openvdb_blender/Bronchi_Vorticity.mov" type="video/mp4">
+            I'm sorry; your browser doesn't support HTML5 video in MP4 with H.264. 
+            <a href="">Try downloading the video instead.</a>
+        </video>
+        <span class="caption">
+            Here, smoke is injected into this model of the human bronchial tubes. The render was produced as an emission render where the emission strength was controlled by an OpenVBD density field and the color was controlled by another OpenVDB field, this time encoding the vorticity of the smoke. Total render time was approximately 378 CPU hours, with a total frame count of 648 frames.
+        </span>    
+    </div>
+    <div class="video_container">
+        <video controls poster="">
+            <source src="http://pages.cs.wisc.edu/~nmitchel/project_pages/openvdb_blender/Sieve_Vorticity.mp4" type="video/mp4">
+            I'm sorry; your browser doesn't support HTML5 video in MP4 with H.264. 
+            <a href="">Try downloading the video instead.</a>
+        </video>
+        <span class="caption">
+            In this last example, thick smoke is injected through a series of angled tubes, creating turbulence. The smoke is rendered using cycles scattering and absorption shaders, whose density and color is controlled, as in the previous example, by OpenVDB fields. The total render time was approximately 5205 CPU hours, with a total frame count of 694 frames. The extreme expense of this render was in part due to trimming computations taken in the cycles shader to remove artifacts near the simulation boundaries, but the absorption and scattering shaders, along with data loading, were the primary culprit. It was for this reason that true smoke rendering was performed for very few scenes in the paper, as we just couldn't afford the time requirements.
         </span>    
     </div>
 </div>
--->
+
