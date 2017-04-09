@@ -19,12 +19,11 @@ title: Nathan Mitchell
     <div class='timelineLine'></div>
     <div class='timelineZone'>
 
-      {% assign doc_collection = site.collections | where: "label", "publications" | first %}
-      {% assign publications = doc_collection.docs | group_by:"paper_year" | sort: 'name' | reverse %}
+      {% assign publications = site.data.publications | group_by:"paper_year" | sort: 'name' | reverse %}
       {% for yeargroup in publications %}
       {% for paper in yeargroup.items %}
 
-      <div class='poi active timelinePoi' tltime='{{ paper.timeline_order }}' url="{{site.url}}{{ paper.url }}">
+      <div class='poi active timelinePoi' tltime='{{ paper.timeline_order }}' url="{{site.url}}/publications/{{ paper.slug }}">
         <div class='caption'>
             <div class="caption-img"><img src="{{ paper.rep_image }}" /></div>
             <div class="caption-text">

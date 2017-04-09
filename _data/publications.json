@@ -1,0 +1,188 @@
+[
+
+    {
+        "slug":"schur_fluids",
+        "short_title": "Scalable Schur-complement Fluids",
+        "paper_title": "A scalable Schur-complement fluids solver for heterogeneous compute platforms",
+        "paper_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/domain_decomposition/domain_decomposition-2016.pdf",
+        "paper_venue": "in proceedings of ACM SIGGRAPH Asia",
+        "paper_year": "2016",
+        "timeline_order": "120",
+        "timeline_venue": "SIGGRAPH Asia 2016",
+        "doi": "10.1145/2980179.2982430", 
+        "rep_image": "/publications_static/schur_fluids/movie1-still.png",
+        "paper_authors": [ "haixiangliu", "nathanmitchell", "mridulaanjaneya", "eftychiossifakis" ],
+        "videos":[
+            {
+                "poster_url": "/publications_static/schur_fluids/movie1-still.png",
+                "src_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/domain_decomposition/Final_Video_Part_I.mov"
+            },
+            {                
+                "poster_url": "/publications_static/schur_fluids/movie2-still.png",
+                "src_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/domain_decomposition/Final_Video_Part_II.mov"
+            }
+        ],
+        "abstract": "We present a scalable parallel solver for the pressure Poisson equation in fluids simulation which can accommodate complex irregular domains in the order of a billion degrees of freedom, using a single server or workstation fitted with GPU or Many-Core accelerators. The design of our numerical technique is attuned to the subtleties of heterogeneous computing, and allows us to benefit from the high memory and compute bandwidth of GPU accelerators even for problems that are too large to fit entirely on GPU memory. This is achieved via algebraic formulations that adequately increase the density of the GPU-hosted computation as to hide the overhead of offloading from the CPU, in exchange for accelerated convergence. Our solver follows the principles of Domain Decomposition techniques, and is based on the Schur complement method for elliptic partial differential equations. A large uniform grid is partitioned in non-overlapping subdomains, and bandwidth-optimized (GPU or Many-Core) accelerator cards are used to efficiently and concurrently solve independent Poisson problems on each resulting subdomain. Our novel contributions are centered on the careful steps necessary to assemble an accurate global solver from these constituent blocks, while avoiding excessive communication or dense linear algebra. We ultimately produce a highly  effective Conjugate Gradients preconditioner, and demonstrate scalable and accurate performance on high-resolution simulations of water and smoke flow."
+
+    },
+    
+    {
+        "slug":"macroblocks",
+        "short_title": "Macroblocks",
+        "paper_title": "A Macroblock Optimization for Grid-Based Nonlinear Elasticity",
+        "paper_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/macroblock/macroblock_2016.pdf",
+        "paper_venue": "Eurographics/ACM SIGGRAPH Symposium on Computer Animation",
+        "paper_year": "2016",
+        "timeline_order": "100",
+        "timeline_venue": "SCA 2016",
+        "doi": "10.2312/sca.20161218",
+        "rep_image": "/publications_static/macroblock/movie-still.jpg",
+        "paper_authors":[ "nathanmitchell", "michaeldoescher", "eftychiossifakis" ],
+        "videos":[
+            {
+                "poster_url": "/publications_static/macroblock/movie-still.jpg",
+                "src_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/macroblock/movie.mp4"
+            }
+        ],
+        "abstract": "We introduce a new numerical approach for the solution of grid-based discretizations of nonlinear elastic models. Our method  targets  the  linearized  system  of  equations  within  each  iteration  of  the  Newton  method,  and  combines  elements  of  a  direct factorization scheme with an iterative Conjugate Gradient method. The goal of our hybrid scheme is to inherit as many of the advantages of its constituent approaches, while curtailing several of their respective drawbacks. In particular, our algorithm  converges in far fewer iterations than Conjugate Gradients, especially for systems with less-than-ideal conditioning. On the  other hand, our approach largely avoids the storage footprint and memory-bound nature of direct methods, such as sparse  Cholesky factorization, while offering very direct opportunities for both SIMD and thread-based parallelism. Conceptually, our  method aggregates a rectangular neighborhood of grid cells (typically a 16x8x8 subgrid) into a composite element that we refer to as a “macroblock”. Similar to conventional tetrahedral or hexahedral elements, macroblocks receive nodal inputs (e.g., displacements) and compute nodal outputs (e.g., forces). However, this input/output interface now only includes nodes on the boundary of the 16x8x8 macroblock; interior nodes are always solved exactly, by means of a direct, highly optimized solver. Models built from macroblocks are solved using Conjugate Gradients, which is accelerated due to the reduced number of degrees of freedom and improved robustness against poor conditioning thanks to the direct solver within each macroblock. We explain how we attain these benefits with just a small increase of the per-iteration cost over the simplest traditional solvers."
+    },
+
+    {
+        "slug":"localflaps",
+        "short_title": "Real-Time Local Flaps",
+        "paper_title": "A Real-Time Local Flaps Surgical Simulator Based on Advances in Computational Algorithms for Finite Element Models",
+        "paper_url":"http://journals.lww.com/plasreconsurg/pages/articleviewer.aspx?year=2016&issue=02000&article=00056&type=abstract", 
+        "paper_venue": "Plastic & Reconstructive Surgery. 137(2):445e-452e, February 2016.",
+        "paper_year": "2016",
+        "timeline_order": "85",
+        "timeline_venue": "PRS 2016",
+        "doi": "10.1097/01.prs.0000475793.38984.7e",
+        "rep_image": "/publications_static/localflaps/movie-still.png",
+        "paper_authors":["nathanmitchell", "courtcutting", "timothyking", "aaronoliker", "eftychiossifakis"],
+        "videos":[
+            {
+                "poster_url": "/publications_static/localflaps/movie-still.png",
+            }
+        ],
+        "abstract":"<p>Background: This article presents a real-time surgical simulator for teaching three- dimensional local flap concepts. Mass-spring based simulators are interactive, but they compromise accuracy and realism. Accurate finite element approaches have traditionally been too slow to permit development of a real-time simulator.</p> <p> Methods: A new computational formulation of the finite element method has been applied to a simulated surgical environment. The surgical operators of retraction, incision, excision, and suturing are provided for three-dimensional operation on skin sheets and scalp flaps. A history mechanism records a user's surgical sequence. Numerical simulation was accomplished by a single small-form-factor computer attached to eight inexpensive Web-based terminals at a total cost of $2100. A local flaps workshop was held for the plastic surgery residents at the University of Wisconsin hospitals. </p> <p>Results: Various flap designs of Z-plasty, rotation, rhomboid flaps, S-plasty, and related techniques were demonstrated in three dimensions. Angle and incision segment length alteration advantages were demonstrated (e.g., opening the angle of a Z-plasty in a three-dimensional web contracture). These principles were then combined in a scalp flap model demonstrating rotation flaps, dual S-plasty, and the Dufourmentel Mouly quad rhomboid flap procedure to demonstrate optimal distribution of secondary defect closure stresses. </p><p>Conclusions: A preliminary skin flap simulator has been demonstrated to be an effective teaching platform for the real-time elucidation of local flap principles. Future work will involve adaptation of the system to facial flaps, breast surgery, cleft lip, and other problems in plastic surgery as well as surgery in general.</p>"      
+    },
+
+    {
+        "slug":"nonmanifold_levelsets",
+        "short_title": "Non-manifold Level Sets",
+        "paper_title": "Non-manifold Level Sets: A multivalued implicit surface representation with applications to self-collision processing",
+        "paper_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/nonmanifold/nonmanifold-2015.pdf",
+        "paper_venue": "in proceedings of ACM SIGGRAPH Asia",
+        "paper_year": "2015",
+        "timeline_order": "70",
+        "timeline_venue": "SIGGRAPH Asia 2015",
+        "doi": "10.1145/2816795.2818100",
+        "rep_image": "/publications_static/nonmanifold_levelsets/movie-still.png",
+        "paper_authors": ["nathanmitchell", "mridulaanjaneya", "rajsekharsetaluri", "eftychiossifakis"],
+        "videos":[
+            {
+                "poster_url": "/publications_static/nonmanifold_levelsets/movie-still.png",
+                "src_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/nonmanifold/movie.mp4"
+            }
+        ],
+        "abstract": "Level sets have been established as highly versatile implicit surface representations, with widespread use in graphics applications including modeling and dynamic simulation. Nevertheless, level sets are often presumed to be limited, compared to explicit meshes, in their ability to represent domains with thin topological features (e.g. narrow slits and gaps) or, even worse, material overlap. Geometries with such features may arise from modeling tools that tolerate occasional self-intersections, fracture modeling algorithms that create narrow or zero-width cuts by design, or as transient states in collision processing pipelines for deformable objects. Converting such models to level sets can alter their topology if thin features are not resolved by the grid size. We argue that this ostensible limitation is not an inherent defect of the implicit surface concept, but a collateral consequence of the standard Cartesian lattice used to store the level set values. We propose storing signed distance values on a regular hexahedral mesh which can have multiple collocated cubic elements and non-manifold bifurcation to accommodate non-trivial topology. We show how such non-manifold level sets can be systematically generated from convenient alternative geometric representations. Finally we demonstrate how this representation can facilitate fast and robust treatment of self-collision in simulations of volumetric elastic deformable bodies."
+
+    },
+
+    
+    {
+        "slug":"gridiron",
+        "short_title": "GRIDiron",
+        "paper_title": "GRIDiron: An Interactive Authoring and Cognitive Training Foundation for Reconstructive Plastic Surgery Procedures",
+        "paper_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/gridiron/gridiron-2015.pdf",
+        "bibtex_url": "/publications_static/gridiron/gridiron-2015.bib",
+        "paper_venue": "in proceedings of ACM SIGGRAPH",
+        "paper_year": "2015",
+        "timeline_order": "50",
+        "timeline_venue": "SIGGRAPH 2015",
+        "doi": "10.1145/2766918",
+        "rep_image": "/publications_static/gridiron/movie-still.png",
+        "paper_authors":["nathanmitchell", "courtcutting", "eftychiossifakis"],
+        "videos":[
+            {
+                "poster_url": "/publications_static/gridiron/movie-still.png",
+                "src_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/gridiron/movie.mp4"
+            }
+        ],
+        "abstract": "We present an interactive simulation framework for authoring surgical procedures of soft tissue manipulation using physics-based simulation to animate the flesh. This interactive authoring tool can be used by clinical educators to craft three-dimensional illustrations of the intricate maneuvers involved in craniofacial repairs, in contrast to two-dimensional sketches and still photographs which are the medium used to describe these procedures in the traditional surgical curriculum. Our virtual environment also allows surgeons-intraining to develop cognitive skills for craniofacial surgery by experimenting with different approaches to reconstructive challenges, adapting stock techniques to flesh regions with nonstandard shape, and reach preliminary predictions about the feasibility of a given repair plan. We use a Cartesian grid-based embedded discretization of nonlinear elasticity to maximize regularity, and expose opportunities for aggressive multithreading and SIMD accelerations. Using a grid-based approach facilitates performance and scalability, but constrains our ability to capture the topology of thin surgical incisions. We circumvent this restriction by hybridizing the grid-based discretization with an explicit hexahedral mesh representation in regions where the embedding mesh necessitates overlap or nonmanifold connectivity. Finally, we detail how the front-end of our system can run on lightweight clients, while the core simulation capability can be hosted on a dedicated server and delivered as a network service.",
+        "code":{
+            "url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/gridiron/simd_vector_kernels.tar.gz",
+            "description": "SIMD (Single Instruction Multiple Data) numerical kernels used for accelerating finite element computations on hardware with vector instruction sets (SSE, AVX, MIC)."
+        }
+        
+
+    },
+
+    
+    {
+        "slug":"steklov-poincare",
+        "short_title": "Steklov-Poincaré Skinning",
+        "paper_title": "Steklov-Poincaré Skinning",
+        "paper_url": "http://pages.cs.wisc.edu/~sifakis/papers/steklov_poincare_skinning_sca2014.pdf",
+        "paper_venue": "Eurographics/ACM SIGGRAPH Symposium on Computer Animation",
+        "paper_year": "2014",
+        "timeline_order": "30",
+        "timeline_venue": "SCA 2014",
+        "doi": "10.1111/cgf.12806",
+        "rep_image": "/publications_static/steklov_poincare/movie-still.png",
+        "paper_authors": ["minggao", "nathanmitchell", "eftychiossifakis"],
+        "videos":[
+            {
+                "poster_url": "/publications_static/steklov_poincare/movie-still.png",
+                "src_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/steklov-poincare/movie.mp4"
+            }
+        ],
+        "abstract": "We  introduce  a  novel  and  efficient  simulation  technique  for  generating  physics-based  skinning  animations  of skeleton-driven characters with full support for collision handling. Although physics-based approaches may use a volumetric (e.g. tetrahedral) flesh model, operations such as rendering, collision processing and user manipulation directly involve only the surface of this mesh. Motivated by this fact we define an elastic model of the skin surface which, while directly using only the surface degrees of freedom, exhibits a mechanical response that captures the full volumetric flesh behavior. We achieve this unusual result by combining three fundamental contributions: First, we present a material model which offers a plausible approximation to corotational elasticity at significantly reduced cost, by computing local rotations via procedural skinning rather than deriving them from the mesh deformation; the result is a force model which is affine on vertex positions, with coefficients dependent on the skeletal pose (but not on the deformation). Second, we use this force model to derive a direct mapping between surface vertex positions and resulting equilibrium forces on the same boundary vertices, which is a discrete version of the Steklov-Poincaré operator of the volumetric elastic model. This mapping is conveniently shown to also be affine (with pose-dependent coefficients), but with a dense stiffness matrix which renders direct numerical solution impractical. However, as a third and final step we show how a modified Newton iteration and a skinning inspired preconditioner can solve the boundary problem with a competitive runtime cost. We assess the efficacy of our solution in simulations of high resolution human flesh models, with full external and self-collision processing."
+        
+    },
+
+   
+    {
+        "slug":"deformations",
+        "short_title": "2D Deformations",
+        "paper_title": "Fast Grid-Based Nonlinear Elasticity for 2D Deformations",
+        "paper_url": "http://pages.cs.wisc.edu/~sifakis/papers/spline_warper_sca2014.pdf",
+        "paper_venue": "Eurographics/ACM SIGGRAPH Symposium on Computer Animation",
+        "paper_year": "2014",
+        "timeline_order": "20",
+        "timeline_venue": "SCA 2014",
+        "doi": "10.1111/cgf.12806",
+        "rep_image": "/publications_static/2d_deformations/movie-still.png",
+        "paper_authors": ["rajsekharsetaluri", "yuwang", "nathanmitchell", "ladislavkavan", "eftychiossifakis"],
+        "videos":[
+            {
+                "poster_url": "/publications_static/2d_deformations/movie-still.png",
+                "src_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/2d_deformations/movie.mp4"
+            }
+        ],
+        "abstract":"We present a deformation technique that constructs 2D warps by using spline curves to specify the starting and target shapes of selected key contours. We generate a two-dimensional deformation map from these contours by simulating a non-linear elastic membrane deforming in accordance with user-specified constraints. Although we support and demonstrate elastic models inspired by physical membranes, we highlight a custom material model for this specific application, which combines the benefits of harmonic interpolation and area-preserving deformations. Our  warps  are  represented  via  a  standard  Cartesian  lattice  and  leverage  the  regularity  of  this  description  to enable efficient computation. Specifically, our method resolves the targeting constraints imposed along arbitrarily shaped contours with sub-grid cell precision, without requiring an explicit remeshing of the warp lattice around the constraint curve. We describe how to obtain a well-conditioned discretization of our membrane model even under elaborate constraints and strict area preservation demands, and present a multigrid solver for the efficient numerical solution of the deformation problem."
+    },
+
+    
+    {
+        "slug":"nonlinear",
+        "short_title": "Nonlinear Elastic Bodies",
+        "paper_title": "Simulation of Complex Nonlinear Elastic Bodies using Lattice Deformers",
+        "paper_url": "http://pages.cs.wisc.edu/~sifakis/papers/nonlinear_lattice_deformer.pdf",
+        "paper_venue": "in proceedings of ACM SIGGRAPH Asia",
+        "paper_year": "2012",
+        "timeline_order": "0",
+        "timeline_venue": "SIGGRAPH Asia 2012",
+        "doi": "10.1145/2366145.2366216",
+        "rep_image":  "/publications_static/nonlinear_elastic/movie-still.png",
+        "paper_authors": ["taylorpatterson", "nathanmitchell", "eftychiossifakis"],
+        videos: [
+            {
+                "poster_url": "/publications_static/nonlinear_elastic/movie-still.png",
+                "src_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/nonlinear_elastic/movie.mp4"
+            }
+        ],
+        "abstract":" Lattice deformers are a popular option for modeling the behavior of elastic bodies as they avoid the need for conforming mesh generation, and their regular structure offers significant opportunities for performance optimizations. Our work expands the scope of current lattice-based elastic deformers,  adding support for a number of important simulation features.  We accommodate complex nonlinear, optionally anisotropic materials while using an economical one-point quadrature scheme. Our formulation fully accommodates near-incompressibility by enforcing accurate nonlinear constraints, supports implicit integration for large time steps,  and is not susceptible to locking or poor conditioning of the discrete equations. Additionally, we increase the accuracy of our solver by employing a novel high-order quadrature scheme on lattice cells overlapping with the model boundary, which are treated at sub-cell precision. Finally, we detail how this accurate boundary treatment can be implemented at a minimal computational premium over the cost of a voxel-accurate discretization.  We demonstrate our method in the simulation of complex musculoskeletal human models."
+    }
+    
+]

@@ -1,25 +1,35 @@
+{% assign publication = site.data.publications | where:"slug",page.pub | first %}
+
 <!doctype html>
 <html>
     <head>
-        <title>{{ page.paper_title }}</title>
+        <title>{{ publication.paper_title }}</title>
         <meta charset="utf-8" />
         {% include bootstrap_head_matter.html %}   
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="{{ site.description }}">
         <link href="/css/project_page.css" rel="stylesheet" type="text/css" />
+        <link href="/css/default.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         {% include header.html %}
 
         <div id="centered-content-block">
-            <h1>{{ page.paper_title }}</h1>
+            <h1>{{ publication.paper_title }}</h1>
 
             <div id="authors"> 
                 <span class="titleline">Authors</span>
                 <div class="author-block">
-                    {% for author in page.paper_authors %}
+                    {% for authorslug in publication.paper_authors %}
+                    {% assign author = site.data.authors | where: "slug", authorslug | first %}
                     <div class="author"> 
-                        <span class="name">{{ author.name }}</span>
+                        <span class="name">
+                            {% if author.url %}
+                            <a href="{{author.url}}"> {{ author.name }} </a>
+                            {% else %}
+                            {{ author.name }}
+                            {% endif %}
+                        </span>
                         <span class="location">{{ author.location }}</span>
                     </div>
                     {% endfor %}
@@ -27,7 +37,7 @@
             </div>
 
             <div id="videos" >
-                {% for video in page.videos %}
+                {% for video in publication.videos %}
                 <div class="video_container">
                     {% if video.src_url %}
                     <video controls poster="{{ video.poster_url }}">
@@ -45,14 +55,14 @@
             <div id="abstract">
                 <span class="titleline">Abstract</span>
                 <p class="body">
-                    {{ page.abstract }}
+                    {{ publication.abstract }}
                 </p>
             </div>
 
-            {% if page.code %}
+            {% if publication.code %}
             <div id="code" >
                 <span class="titleline">Code</span>
-                {% for code in page.code %}
+                {% for code in publication.code %}
                 <div class="code-block">
                     <div class="code-downloads" >
                         <a href="{{ code.url }}">[Download]</a>
@@ -69,23 +79,30 @@
                 <span class="titleline">Cite</span>
                 <div class="citation-block">
                     <div class="citation-downloads">
-                        {% if page.paper_url %}<a href="{{ page.paper_url }}" class="paper-link">[Download]</a>{% endif %}
-                        {% if page.bibtex_url %}<a href="{{ page.bibtex_url }}" class="paper-bibtex">[Bibtex]</a>{% endif %}
+                        {% if publication.paper_url %}<a href="{{ publication.paper_url }}" class="paper-link">[Download]</a>{% endif %}
+                        {% if publication.bibtex_url %}<a href="{{ publication.bibtex_url }}" class="paper-bibtex">[Bibtex]</a>{% endif %}
                     </div>
                     <div class="citation">
-                        <span class="paper-authors">{% for author in page.paper_authors %}{{ author.cite_name }}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}</span>
+                        <span class="paper-authors">{% for authorslug in publication.paper_authors %}
+                            {% assign author = site.data.authors | where: "slug", authorslug | first %}
+                            {{ author.cite_name }}
+                            {% if forloop.last %}
+                            {% else %},
+                            {% endif %}
+                            {% endfor %}
+                        </span>
                         <span class="paper-title">
-                            {{ page.paper_title }}
+                            {{ publication.paper_title }}
                         </span>
                         <span class="paper-venue">
-                            {{ page.paper_venue }}, {{ page.paper_year }}
+                            {{ publication.paper_venue }}, {{ publication.paper_year }}
                         </span>  
                     </div>
                 </div>
-                {% if page.doi %}
+                {% if publication.doi %}
                 <div class="doi-block">
                     <span class="block-label">DOI:</span>
-                    <span class="block-content"><a href="http://dx.doi.org/{{ page.doi }}">doi:{{ page.doi }}</a></span>
+                    <span class="block-content"><a href="http://dx.doi.org/{{ publication.doi }}">doi:{{ publication.doi }}</a></span>
                 </div>
                 {% endif %}
             </div>

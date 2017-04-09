@@ -1,0 +1,92 @@
+[
+    {
+        "slug":"haixiangliu",
+        "name": "Haixiang Liu",
+        "location": "University of Wisconsin - Madison",
+        "cite_name": "H. Liu",
+        "linkedin":"https://www.linkedin.com/in/haixiang-liu-a8432646"
+    },
+    {
+        "slug":"nathanmitchell",
+        "name": "Nathan Mitchell",
+        "location": "University of Wisconsin - Madison",
+        "cite_name": "N. Mitchell",
+        "url":"http://nathanmitchell.graphics"
+    },
+    {
+        "slug":"mridulaanjaneya",
+        "name": "Mridul Aanjaneya",
+        "location": "University of Wisconsin - Madison",
+        "cite_name": "M. Aanjaneya",
+        "url":"http://pages.cs.wisc.edu/~aanjneya/"
+    },
+    {
+        "slug":"eftychiossifakis",
+        "name": "Eftychios Sifakis",
+        "location": "University of Wisconsin - Madison",
+        "cite_name": "E. Sifakis",
+        "url":"http://pages.cs.wisc.edu/~sifakis/"
+    },
+    {
+        "slug":"michaeldoescher",
+        "name": "Michael Doescher",
+        "location": "University of Wisconsin - Madison",
+        "cite_name": "M. Doescher",
+    },
+    {
+        "slug":"courtcutting",
+        "name": "Court B. Cutting",
+        "location": "Department of Plastic Surgery, New York University Medical Center",
+        "cite_name": "C. Cutting",
+        "url":"http://www.courtcuttingmd.com/"
+    },
+    {
+        "slug":"timothyking",
+        "name": "Timothy W. King",
+        "location": "Division of Plastic Surgery, University of Wisconsin Medical Center",
+        "cite_name": "T. King",
+        "url":"https://www.uab.edu/medicine/surgery/plastic/faculty/king"
+    },
+    {
+        "slug":"aaronoliker",
+        "name": "Aaron Oliker",
+        "location": "Biodigital Systems, LLC",
+        "cite_name": "A. Oliker",
+        "url":"www.biodigital.com"
+    },
+    {
+        "slug":"rajsekharsetaluri",
+        "name": "Rajsekhar Setaluri",
+        "location": "University of Wisconsin - Madison",
+        "cite_name": "R. Setaluri",
+        "url":"http://stanford.edu/~setaluri/"
+    },
+    {
+        "slug":"minggao",
+        "name": "Ming Gao",
+        "location": "University of Wisconsin - Madison",
+        "cite_name": "M. Gao",
+        "url":"http://pages.cs.wisc.edu/~mingg13/"
+    },
+    {
+        "slug":"yuwang",
+        "name": "Yu Wang",
+        "location": "University of Pennsylvania",
+        "cite_name": "Y. Wang",
+        "url":"http://www.mit.edu/~wangyu9/"
+    },
+    {
+        "slug":"ladislavkavan",   
+        "name": "Ladislav Kavan",
+        "location": "University of Pennsylvania",
+        "cite_name": "L. Kavan",
+        "url":"https://www.cs.utah.edu/~ladislav/"
+    },
+    {
+        "slug":"taylorpatterson",
+        "name": "Taylor Patterson",
+        "location": "University of Wisconsin - Madison",
+        "cite_name": "T. Patterson",
+        "url":"https://www.ornl.gov/staff-profile/taylor-c-patterson"
+    }
+]

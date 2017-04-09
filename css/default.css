@@ -17,3 +17,14 @@
     top: 160.2px;
     z-index: 2000;
 }
+
+#footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1000;
+    text-orientation: sideways;
+    /* height: 200px; */
+    transform: rotate(-90deg);
+    transform-origin: left top 0;
+}
