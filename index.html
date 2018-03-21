@@ -6,7 +6,7 @@ title: Nathan Mitchell
 
 <image id="main_portrait" src="images/NMitchell_Portrait.png"/>
 
-<p>My name is Nathan Mitchell and I am a graduate student at the <a href="http://www.cs.wisc.edu/">University of Wisconsin - Madison</a> and a member of the <a href="http://graphics.cs.wisc.edu">UW Visual Computing Lab</a>, currently six years into my Ph.D program for computer science. My primary academic interests include deformable object simulation, software optimization for heterogenous hardware, and rendering. For the past several years, I have been the lead developer on a <a href="/project_pages/virtual_surgery">virtual surgery project</a>, which aims to provide a virtual authoring and practice tool for plastic surgeons.</p>
+<p>My name is Nathan Mitchell and I am currently working as Lead Simulation Developer for <a href="http://avametric.com">Avametric</a>. At Avametric I am actively designing and improving advanced cloth simulation software to support digital clothing e-commerce services. Previously, I completed a Ph.D. in computer science at the <a href="http://www.cs.wisc.edu/">University of Wisconsin - Madison</a>, where I was a member of the <a href="http://graphics.cs.wisc.edu">UW Visual Computing Lab</a>. During my time there, my primary academic interests included deformable object simulation, software optimization for heterogeneous hardware, and rendering. As part of my prior research, I was the lead developer on a <a href="/project_pages/virtual_surgery">virtual surgery project</a>, which aimed to provide a virtual authoring and practice tool for plastic surgeons.</p>
 
 <p>My advisor at the University of Wisconsin is <a href="http://pages.cs.wisc.edu/~sifakis">Eftychios Sifakis</a>. Before I began my graduate program, I attended the <a href="http://www.edinboro.edu/academics/schools-and-departments/cshp/departments/mcs/index.html">University of Edinboro</a> in Pennsylvania for my undergraduate degree in computer science. I have also worked with the Math and Computer Science division of Argonne National Labs, where I helped develop software for managing cluster provisioning.</p>
 
@@ -28,13 +28,14 @@ title: Nathan Mitchell
             <div class="caption-img"><img src="{{ paper.rep_image }}" /></div>
             <div class="caption-text">
                 <div class='titlebar'>
-                    <h2 class='title'><span>{{ paper.timeline_venue }} - {{ paper.short_title }}</span></h2>
+                    <h2 class='title'><span>{{ paper.short_title }}</span></h2>
                 </div>
                 <div class='body'><p>
                     {{ paper.abstract | truncate: 250 }}
                 </div>
             </div>
         </div>
+        <span class="time">{{ paper.timeline_venue }}</span>
       </div>
 
       {% endfor %}

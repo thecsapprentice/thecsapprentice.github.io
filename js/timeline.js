@@ -34,11 +34,11 @@ $(function(){
 //            $(this).css("top",pos+"%");
             $(this).removeClass("active");
             if ( timeI%2==0 ) { $(this).addClass("rightAlign"); }
-            var title = $(this).find(".title").html().split("<span>")[1].split("</span>")[0];
-            var titleTime = title.split(" - ")[0];
-            var titleText = title.split(" - ")[1];
-            $(this).find(".title").html(/*"<span class='time'>"+titleTime+" - </span>"+*/titleText);
-            $(this).append("<span class='time'>"+titleTime+"</span>");
+            //var title = $(this).find(".title").html().split("<span>")[1].split("</span>")[0];
+            //var titleTime = title.split(" - ")[0];
+            //var titleText = title.split(" - ")[1];
+            //$(this).find(".title").html(/*"<span class='time'>"+titleTime+" - </span>"+*/titleText);
+            //$(this).append("<span class='time'>"+titleTime+"</span>");
         });
         
 

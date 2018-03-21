@@ -183,6 +183,27 @@
             }
         ],
         "abstract":" Lattice deformers are a popular option for modeling the behavior of elastic bodies as they avoid the need for conforming mesh generation, and their regular structure offers significant opportunities for performance optimizations. Our work expands the scope of current lattice-based elastic deformers,  adding support for a number of important simulation features.  We accommodate complex nonlinear, optionally anisotropic materials while using an economical one-point quadrature scheme. Our formulation fully accommodates near-incompressibility by enforcing accurate nonlinear constraints, supports implicit integration for large time steps,  and is not susceptible to locking or poor conditioning of the discrete equations. Additionally, we increase the accuracy of our solver by employing a novel high-order quadrature scheme on lattice cells overlapping with the model boundary, which are treated at sub-cell precision. Finally, we detail how this accurate boundary treatment can be implemented at a minimal computational premium over the cost of a voxel-accurate discretization.  We demonstrate our method in the simulation of complex musculoskeletal human models."
+    },
+
+
+    {
+        "slug":"dissertation",
+        "short_title": "Ph.D. Dissertation",
+        "paper_title": "Techniques for Single System Integration of Elastic Simulation Features",
+        "paper_url": "http://pages.cs.wisc.edu/~nmitchel/project_pages/dissertation/mitchell_dissertation_2017.pdf",
+        "paper_venue": "University of Wisconsin - Madison",
+        "paper_year": "2017",
+        "timeline_order": "140",
+        "timeline_venue": "University of Wisconsin - Madison",
+        "isbn": "9780355235982",
+        "rep_image":  "/publications_static/dissertation/preview.png",
+        "paper_authors": ["nathanmitchell"],
+        images: [
+            {
+                "src_url": "/publications_static/dissertation/preview.png",
+            }
+        ],
+        "abstract":"Techniques for simulating the behavior of elastic objects have matured considerably over the last several decades, tackling diverse problems from non-linear models for incompressibility to accurate self-collisions. Alongside these contributions, advances in parallel hardware design and algorithms have made simulation more efficient and affordable than ever before. However, prior research often has had to commit to design choices that compromise certain simulation features to better optimize others, resulting in a fragmented landscape of solutions. For complex, real-world tasks, such as virtual surgery, a holistic approach is desirable, where complex behavior, performance, and ease of modeling are supported equally. This dissertation caters to this goal in the form of several interconnected threads of investigation, each of which contributes a piece of an unified solution. First, it will be demonstrated how various non-linear materials can be combined with lattice deformers to yield simulations with behavioral richness and a high potential for parallelism. This potential will be exploited to show how a hybrid solver approach based on large macroblocks can accelerate the convergence of these deformers. Further extensions of the lattice concept with non-manifold topology will allow for efficient processing of self-collisions and topology change. Finally, these concepts will be explored in the context of a case study on virtual plastic surgery, demonstrating a real-world problem space where these ideas can be combined to build an expressive authoring tool, allowing surgeons to record procedures digitally for future reference or education."
     }
     
 ]

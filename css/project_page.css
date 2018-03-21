@@ -124,6 +124,27 @@ body {
     height: auto   !important;
 }
 
+#images{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#images .image_container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#images img{
+    max-height: 500px; !important;
+    width: auto        !important;
+}
+
+
 .code-block{
     font-family: 'Cabin', sans-serif;     
     display: flex;

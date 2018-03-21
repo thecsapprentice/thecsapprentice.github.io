@@ -36,6 +36,16 @@
                 </div>
             </div>
 
+            <div id="images" >
+                {% for image in publication.images %}
+                <div class="image_container">
+                    {% if image.src_url %}
+                    <img src="{{ image.src_url }}" />
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            
             <div id="videos" >
                 {% for video in publication.videos %}
                 <div class="video_container">
